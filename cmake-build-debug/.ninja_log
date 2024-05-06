@@ -1,0 +1,12 @@
+# ninja log v5
+15	89	7366427827975042	CMakeFiles/StaffDemo.dir/src/Factory.cpp.obj	22d99e55ec6e6339
+2	217	7367103994539077	build.ninja	58134abbf9b7563a
+32	1057	7366951505912322	CMakeFiles/StaffDemo.dir/src/Employee.cpp.obj	c67893cbff11728f
+10	84	7366427827881575	CMakeFiles/StaffDemo.dir/src/Engineer.cpp.obj	939ed9f4b065636
+14	1336	7367038324000306	CMakeFiles/StaffDemo.dir/src/Personal.cpp.obj	9948a72565754d7
+2	448	7366427835728184	CMakeFiles/StaffDemo.info.dir/src/main.cpp.obj	3e8b0670045d8488
+1337	1849	7367038329100200	libStaffDemo.dll	c6505120ac83cdc
+1337	1849	7367038329100200	libStaffDemo.dll.a	c6505120ac83cdc
+450	537	7366427836582133	StaffDemo.info.exe	64f82ad3c0493522
+45	1045	7366951505728399	CMakeFiles/StaffDemo_exe.dir/src/main.cpp.obj	53d78a37092bad87
+1849	2041	7367038331043762	StaffDemo_exe.exe	7a2120f43f42d3e2
