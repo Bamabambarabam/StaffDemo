@@ -1,3 +1,6 @@
+// Copyright 2024 HSE NN
+// Author: Lev Pestov
+
 #pragma once
 #ifndef INCLUDE_EMPLOYEE_H_
 #define INCLUDE_EMPLOYEE_H_
@@ -19,11 +22,11 @@ class Employee {
  public:
   Employee(int id, std::string name,
             int work_time, Positions position, int payment);
-  virtual ~Employee() = default;
   virtual void calc_salary(int bonus) = 0;
   virtual void print_info() = 0;
   void SetWorkTime(int hours);
   int get_id() const;
+  virtual ~Employee() = default;
  private:
   int id;
  protected:

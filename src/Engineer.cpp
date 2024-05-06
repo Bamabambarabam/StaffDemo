@@ -1,3 +1,6 @@
+// Copyright 2024 HSE NN
+// Author: Lev Pestov
+
 #include "Engineer.h"
 #include "Project.h"
 

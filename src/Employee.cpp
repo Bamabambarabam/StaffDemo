@@ -1,3 +1,6 @@
+// Copyright 2024 HSE NN
+// Author: Lev Pestov
+
 #include "Employee.h"
 
 Employee::Employee(int id, std::string name, int work_time, Positions position, int payment)

@@ -1,3 +1,6 @@
+// Copyright 2024 HSE NN
+// Author: Lev Pestov
+
 #pragma once
 #ifndef INCLUDE_PERSONAL_H_
 #define INCLUDE_PERSONAL_H_

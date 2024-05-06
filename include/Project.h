@@ -1,3 +1,6 @@
+// Copyright 2024 HSE NN
+// Author: Lev Pestov
+
 #pragma once
 #ifndef STAFFDEMO_INCLUDE_PROJECT_H_
 #define STAFFDEMO_INCLUDE_PROJECT_H_
@@ -18,29 +21,28 @@ class Project {
   int budget;
 };
 
-
 class ProjectManager : public Employee, public Project_Budget, public Project, public Heading {
  public:
-  ProjectManager(int id, std::string name, int workTime, Positions position, std::vector<Project*>& projects);
-  ~ProjectManager() override = default;
+  ProjectManager(int id, std::string name, int workTime, Positions position, std::vector<Project *> &projects);
   int calc_budget_part() override;
   int calc_pro_additions(int bonus) override;
   void calc_salary(int bonus) override;
   void print_info() override;
+  ~ProjectManager() override = default;
  private:
-  std::vector<Project*> projects;
+  std::vector<Project *> projects;
 };
 
 class SeniorManager : public ProjectManager {
  public:
-  SeniorManager(int id, std::string name, int workTime, Positions position, std::vector<Project*>& projects);
-  ~SeniorManager() override = default;
+  SeniorManager(int id, std::string name, int workTime, Positions position, std::vector<Project *> &projects);
   int calc_budget_part() override;
   int calc_pro_additions(int bonus) override;
   void calc_salary(int bonus) override;
   void print_info() override;
+  ~SeniorManager() override = default;
  private:
-  std::vector<Project*> projects;
+  std::vector<Project *> projects;
 };
 
 #endif //STAFFDEMO_INCLUDE_PROJECT_H_
