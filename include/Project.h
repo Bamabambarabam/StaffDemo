@@ -33,7 +33,7 @@ class ProjectManager : public Employee, public Project_Budget, public Project, p
 
 class SeniorManager : public ProjectManager {
  public:
-  SeniorManager(int id, std::string name, int workTime, Positions position, const std::vector<Project*>& projects);
+  SeniorManager(int id, std::string name, int workTime, Positions position, std::vector<Project*>& projects);
   ~SeniorManager() override = default;
   int calc_budget_part() override;
   int calc_pro_additions(int bonus) override;

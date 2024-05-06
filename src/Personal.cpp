@@ -16,7 +16,9 @@ void Personal::print_info() {
 }
 
 Driver::Driver(int id, std::string name, int workTime, int salary, Positions position, int payment)
-    : Personal(id, std::move(name), workTime, salary, position, payment) {}
+    : Personal(id, std::move(name), workTime, salary, position, payment) {
+    this->position = driver;
+}
 
 int Driver::calc_bonus_salary(int night_hours) {
   return night_hours * 10;
@@ -26,7 +28,9 @@ void Driver::calc_salary(int bonus_hours) {
 }
 
 Cleaner::Cleaner(int id, std::string name, int workTime, int salary, Positions position, int payment)
-    : Personal(id, std::move(name), workTime, salary, position, payment) {}
+    : Personal(id, std::move(name), workTime, salary, position, payment) {
+    this->position = cleaner;
+}
 
 void Cleaner::calc_salary(int bonus) {
   payment = calc_base_salary(salary, work_time);
