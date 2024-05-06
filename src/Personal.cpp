@@ -26,6 +26,9 @@ int Driver::calc_bonus_salary(int night_hours) {
 void Driver::calc_salary(int bonus_hours) {
   payment = calc_base_salary(salary, work_time) + calc_bonus_salary(bonus_hours);
 }
+void Driver::print_info() {
+    std::cout << "Driver: " << name << ", Position: " << enum_print[position] << ", Salary: " << payment << std::endl;
+}
 
 Cleaner::Cleaner(int id, std::string name, int workTime, int salary, Positions position, int payment)
     : Personal(id, std::move(name), workTime, salary, position, payment) {
@@ -34,4 +37,7 @@ Cleaner::Cleaner(int id, std::string name, int workTime, int salary, Positions p
 
 void Cleaner::calc_salary(int bonus) {
   payment = calc_base_salary(salary, work_time);
+}
+void Cleaner::print_info() {
+    std::cout << "Cleaner: " << name << ", Position: " << enum_print[position] << ", Salary: " << payment << std::endl;
 }

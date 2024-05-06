@@ -25,6 +25,7 @@ class Driver : public Personal {
          int work_time, int salary, Positions position, const int payment);
   void calc_salary(int bonus) override;
   int calc_bonus_salary(int bonus) override;
+  void print_info() override;
 };
 
 class Cleaner : public Personal {
@@ -32,5 +33,6 @@ class Cleaner : public Personal {
   Cleaner(int id, std::string name,
           int work_time, int salary, Positions position, const int payment);
   void calc_salary(int bonus) override;
+  void print_info() override;
 };
 #endif  // INCLUDE_PERSONAL_H_
