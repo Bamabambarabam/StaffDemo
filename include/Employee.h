@@ -26,6 +26,7 @@ class Employee {
   virtual void print_info() = 0;
   void SetWorkTime(int hours);
   int get_id() const;
+  int get_payment() const;
   virtual ~Employee() = default;
  private:
   int id;

@@ -14,3 +14,6 @@ void Employee::SetWorkTime(int hours) {
 int Employee::get_id() const {
   return id;
 }
+int Employee::get_payment() const {
+  return payment;
+}

@@ -24,7 +24,7 @@ Driver::Driver(int id, std::string name, int workTime, int salary, Positions pos
 }
 
 int Driver::calc_bonus_salary(int night_hours) {
-  return night_hours * 10;
+  return night_hours * 100;
 }
 void Driver::calc_salary(int bonus_hours) {
   payment = calc_base_salary(salary, work_time) + calc_bonus_salary(bonus_hours);

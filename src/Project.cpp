@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Project.h"
 
-Project::Project(int id, int budget) : id(id), budget(budget) {}
+Project::Project(int id, int budget, int number_of_employee) : id(id), budget(budget), number_of_employee(number_of_employee){}
 
 int Project::get_budget() const {
   return budget;
@@ -17,13 +17,19 @@ int Project::get_id() const {
 void Project::set_budget(int budget) {
   this->budget = budget;
 }
+int Project::get_number_of_employee() const {
+  return number_of_employee;
+}
+void Project::set_number_of_employee(int number_of_employee) {
+  this->number_of_employee = number_of_employee;
+}
 
 ProjectManager::ProjectManager(int id,
                                std::string name,
                                int workTime,
                                Positions position,
                                std::vector<Project *> &projects)
-    : Employee(id, std::move(name), workTime, position, 0), projects(std::move(projects)) {
+    : Employee(id, std::move(name), workTime, position, 0), projects(projects) {
   this->position = project_manager;
 }
 
@@ -35,9 +41,14 @@ int ProjectManager::calc_pro_additions(int bonus) {
   return bonus * 100;
 }
 
-void ProjectManager::calc_salary(int bonus) {
-  payment = calc_pro_additions(bonus) + calc_budget_part();
+int ProjectManager::calc_Heads() {
+  return 1000 * projects[0]->get_number_of_employee();
 }
+
+void ProjectManager::calc_salary(int bonus) {
+  payment = calc_Heads() + calc_budget_part();
+}
+
 
 void ProjectManager::print_info() {
   std::cout << "Project Manager Info:" << std::endl;
@@ -56,7 +67,7 @@ SeniorManager::SeniorManager(int id,
                              std::vector<Project *> &projects)
     : ProjectManager(id, std::move(name), workTime, position, projects) {
   this->position = senior_manager;
-  projects = std::move(projects);
+  this->projects = projects;  // Assign the projects vector without moving
 }
 
 int SeniorManager::calc_budget_part() {
@@ -68,11 +79,14 @@ int SeniorManager::calc_budget_part() {
 }
 
 int SeniorManager::calc_pro_additions(int bonus) {
-  return bonus * 200;
+  return bonus * 20000;
 }
 
 void SeniorManager::calc_salary(int bonus) {
-  payment = calc_pro_additions(bonus) + calc_budget_part();
+  for(const auto &project : projects) {
+    payment += project->get_number_of_employee() * 1000;
+  }
+  payment += calc_budget_part();
 }
 
 void SeniorManager::print_info() {

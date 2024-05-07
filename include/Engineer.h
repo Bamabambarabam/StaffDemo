@@ -24,7 +24,7 @@ class Engineer : public Personal, public Project_Budget {
 
 class Programmer : public Engineer {
  public:
-  Programmer(int id, std::string name, int work_time, Positions position, int payment, Project *project);
+  Programmer(int id, std::string name, int work_time, int salary, Positions position, int payment, Project *project);
   void calc_salary(int bonus) override;
   int calc_pro_additions(int bonus) override;
   void print_info() override;

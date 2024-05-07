@@ -24,9 +24,10 @@ void Engineer::print_info() {
     std::cout << "Project ID: " << project->get_id() << ", Budget: " << project->get_budget() << std::endl;
 }
 
-Programmer::Programmer(int id, std::string name, int work_time, Positions position, int payment, Project* project)
-    : Engineer(id, std::move(name), work_time, 0, position, payment, project) {
+Programmer::Programmer(int id, std::string name, int work_time, int salary, Positions position, int payment, Project* project)
+    : Engineer(id, std::move(name), work_time, salary, position, payment, project) {
     this->position = programmer;
+    project->set_number_of_employee(project->get_number_of_employee() + 1);
 }
 
 
@@ -50,6 +51,7 @@ void Programmer::print_info() {
 Tester::Tester(int id, std::string name, int work_time, int salary, Positions position, int payment, Project* project)
     : Engineer(id, std::move(name), work_time, salary, position, payment, project) {
     this->position = tester;
+    project->set_number_of_employee(project->get_number_of_employee() + 1);
 }
 
 int Tester::calc_pro_additions(int bugs) {
@@ -70,8 +72,9 @@ void Tester::print_info() {
 }
 
 TeamLeader::TeamLeader(int id, std::string name, int work_time, int salary, Positions position, int payment, Project* project)
-    : Programmer(id, std::move(name), work_time, position, payment, project) {
+    : Programmer(id, std::move(name), work_time, salary, position, payment, project) {
     this->position = team_leader;
+    project->set_number_of_employee(project->get_number_of_employee() + 1);
 }
 
 int TeamLeader::calc_Heads() {
