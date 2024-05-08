@@ -4,7 +4,13 @@
 #include "Engineer.h"
 #include "Project.h"
 
-Engineer::Engineer(int id, std::string name, int work_time, int salary, Positions position, int payment, Project* project)
+Engineer::Engineer(int id,
+                   std::string name,
+                   int work_time,
+                   int salary,
+                   Positions position,
+                   int payment,
+                   Project *project)
     : Personal(id, std::move(name), work_time, salary, position, payment), project(project) {}
 
 int Engineer::calc_budget_part() {
@@ -16,20 +22,25 @@ void Engineer::calc_salary(int bonus) {
 }
 
 void Engineer::print_info() {
-    std::cout << "Engineer Info:" << std::endl;
-    std::cout << "ID: " << Employee::get_id() << std::endl;
-    std::cout << "Name: " << name << std::endl;
-    std::cout << "Work Time: " << work_time << std::endl;
-    std::cout << "Position: " << enum_print[position] << std::endl;
-    std::cout << "Project ID: " << project->get_id() << ", Budget: " << project->get_budget() << std::endl;
+  std::cout << "Engineer Info:" << std::endl;
+  std::cout << "ID: " << Employee::get_id() << std::endl;
+  std::cout << "Name: " << name << std::endl;
+  std::cout << "Work Time: " << work_time << std::endl;
+  std::cout << "Position: " << enum_print[position] << std::endl;
+  std::cout << "Project ID: " << project->get_id() << ", Budget: " << project->get_budget() << std::endl;
 }
 
-Programmer::Programmer(int id, std::string name, int work_time, int salary, Positions position, int payment, Project* project)
+Programmer::Programmer(int id,
+                       std::string name,
+                       int work_time,
+                       int salary,
+                       Positions position,
+                       int payment,
+                       Project *project)
     : Engineer(id, std::move(name), work_time, salary, position, payment, project) {
-    this->position = programmer;
-    project->set_number_of_employee(project->get_number_of_employee() + 1);
+  this->position = programmer;
+  project->set_number_of_employee(project->get_number_of_employee() + 1);
 }
-
 
 int Programmer::calc_pro_additions(int bonus) {
   return bonus * 1000;
@@ -40,22 +51,22 @@ void Programmer::calc_salary(int bonus) {
 }
 
 void Programmer::print_info() {
-    std::cout << "Programmer Info:" << std::endl;
-    std::cout << "ID: " << Employee::get_id() << std::endl;
-    std::cout << "Name: " << name << std::endl;
-    std::cout << "Work Time: " << work_time << std::endl;
-    std::cout << "Position: " << enum_print[position] << std::endl;
-    std::cout << "Project ID: " << project->get_id() << ", Budget: " << project->get_budget() << std::endl;
+  std::cout << "Programmer Info:" << std::endl;
+  std::cout << "ID: " << Employee::get_id() << std::endl;
+  std::cout << "Name: " << name << std::endl;
+  std::cout << "Work Time: " << work_time << std::endl;
+  std::cout << "Position: " << enum_print[position] << std::endl;
+  std::cout << "Project ID: " << project->get_id() << ", Budget: " << project->get_budget() << std::endl;
 }
 
-Tester::Tester(int id, std::string name, int work_time, int salary, Positions position, int payment, Project* project)
+Tester::Tester(int id, std::string name, int work_time, int salary, Positions position, int payment, Project *project)
     : Engineer(id, std::move(name), work_time, salary, position, payment, project) {
-    this->position = tester;
-    project->set_number_of_employee(project->get_number_of_employee() + 1);
+  this->position = tester;
+  project->set_number_of_employee(project->get_number_of_employee() + 1);
 }
 
 int Tester::calc_pro_additions(int bugs) {
-  return bugs * 5;
+  return bugs * 10;
 }
 
 void Tester::calc_salary(int bugs) {
@@ -63,22 +74,28 @@ void Tester::calc_salary(int bugs) {
 }
 
 void Tester::print_info() {
-    std::cout << "Tester Info:" << std::endl;
-    std::cout << "ID: " << Employee::get_id() << std::endl;
-    std::cout << "Name: " << name << std::endl;
-    std::cout << "Work Time: " << work_time << std::endl;
-    std::cout << "Position: " << enum_print[position] << std::endl;
-    std::cout << "Project ID: " << project->get_id() << ", Budget: " << project->get_budget() << std::endl;
+  std::cout << "Tester Info:" << std::endl;
+  std::cout << "ID: " << Employee::get_id() << std::endl;
+  std::cout << "Name: " << name << std::endl;
+  std::cout << "Work Time: " << work_time << std::endl;
+  std::cout << "Position: " << enum_print[position] << std::endl;
+  std::cout << "Project ID: " << project->get_id() << ", Budget: " << project->get_budget() << std::endl;
 }
 
-TeamLeader::TeamLeader(int id, std::string name, int work_time, int salary, Positions position, int payment, Project* project)
+TeamLeader::TeamLeader(int id,
+                       std::string name,
+                       int work_time,
+                       int salary,
+                       Positions position,
+                       int payment,
+                       Project *project)
     : Programmer(id, std::move(name), work_time, salary, position, payment, project) {
-    this->position = team_leader;
-    project->set_number_of_employee(project->get_number_of_employee() + 1);
+  this->position = team_leader;
+  project->set_number_of_employee(project->get_number_of_employee() + 1);
 }
 
 int TeamLeader::calc_Heads() {
-  return salary * 1000;
+  return salary * 100;
 }
 
 void TeamLeader::calc_salary(int bonus) {

@@ -4,7 +4,8 @@
 #include <iostream>
 #include "Project.h"
 
-Project::Project(int id, int budget, int number_of_employee) : id(id), budget(budget), number_of_employee(number_of_employee){}
+Project::Project(int id, int budget, int number_of_employee)
+    : id(id), budget(budget), number_of_employee(number_of_employee) {}
 
 int Project::get_budget() const {
   return budget;
@@ -34,7 +35,7 @@ ProjectManager::ProjectManager(int id,
 }
 
 int ProjectManager::calc_budget_part() {
-  return int(0.3 * projects[0]->get_budget()); // 1 project always exists for ProjectManager
+  return int(0.3 * projects[0]->get_budget()); // у менеджера проекта всегда только один проект
 }
 
 int ProjectManager::calc_pro_additions(int bonus) {
@@ -46,9 +47,8 @@ int ProjectManager::calc_Heads() {
 }
 
 void ProjectManager::calc_salary(int bonus) {
-  payment = calc_Heads() + calc_budget_part();
+  payment = (calc_Heads() + calc_budget_part()) * 5;
 }
-
 
 void ProjectManager::print_info() {
   std::cout << "Project Manager Info:" << std::endl;
@@ -67,7 +67,7 @@ SeniorManager::SeniorManager(int id,
                              std::vector<Project *> &projects)
     : ProjectManager(id, std::move(name), workTime, position, projects) {
   this->position = senior_manager;
-  this->projects = projects;  // Assign the projects vector without moving
+  this->projects = projects;
 }
 
 int SeniorManager::calc_budget_part() {
@@ -83,10 +83,11 @@ int SeniorManager::calc_pro_additions(int bonus) {
 }
 
 void SeniorManager::calc_salary(int bonus) {
-  for(const auto &project : projects) {
+  for (const auto &project : projects) {
     payment += project->get_number_of_employee() * 1000;
   }
   payment += calc_budget_part();
+  payment *= 5;
 }
 
 void SeniorManager::print_info() {

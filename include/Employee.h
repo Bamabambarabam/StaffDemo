@@ -21,7 +21,7 @@ enum Positions {
 class Employee {
  public:
   Employee(int id, std::string name,
-            int work_time, Positions position, int payment);
+           int work_time, Positions position, int payment);
   virtual void calc_salary(int bonus) = 0;
   virtual void print_info() = 0;
   void SetWorkTime(int hours);

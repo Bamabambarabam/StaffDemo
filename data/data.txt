@@ -1,0 +1,13 @@
+project:1:100000
+project:2:200000
+project:3:300000
+employee:driver:1:John Doe:1000
+employee:cleaner:2:Jane Smith:1200
+employee:tester:3:Robert Johnson:1500:2
+employee:programmer:4:James Brown:2000:1
+employee:team_leader:5:Patricia Davis:2500:3
+employee:project_manager:6:Kostin Andrey:0:3
+employee:project_manager:7:Jennifer Miller:0:2
+employee:senior_manager:8:Michael Wilson:0:1:2
+employee:senior_manager:9:Roman Maikovski:0:2:3
+employee:senior_manager:10:Lev Pestov:0:1:2:3

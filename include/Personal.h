@@ -13,7 +13,7 @@
 class Personal : public Employee, public Work_Base_Time {
  public:
   Personal(int id, std::string name,
-           int workTime, int salary, Positions position, const int payment);
+           int workTime, int salary, Positions position, int payment);
   int calc_bonus_salary(int bonus) override;
   void print_info() override;
   int calc_base_salary(int salary, int work_time_salary) override;
@@ -25,7 +25,7 @@ class Personal : public Employee, public Work_Base_Time {
 class Driver : public Personal {
  public:
   Driver(int id, std::string name,
-         int work_time, int salary, Positions position, const int payment);
+         int work_time, int salary, Positions position, int payment);
   void calc_salary(int bonus) override;
   int calc_bonus_salary(int bonus) override;
   void print_info() override;
@@ -34,7 +34,7 @@ class Driver : public Personal {
 class Cleaner : public Personal {
  public:
   Cleaner(int id, std::string name,
-          int work_time, int salary, Positions position, const int payment);
+          int work_time, int salary, Positions position, int payment);
   void calc_salary(int bonus) override;
   void print_info() override;
 };
