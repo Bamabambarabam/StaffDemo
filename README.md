@@ -95,9 +95,11 @@ for(Employee emp: staff) {
 - Personal.h 
 - Engineer.h 
 - Factory.h
+- Project.h
 - Employee.cpp 
 - Personal.cpp 
 - Engineer.cpp 
 - Manager.cpp 
 - Factory.cpp
+- Project.cpp
 - main.cpp
