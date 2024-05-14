@@ -91,15 +91,13 @@ for(Employee emp: staff) {
 
 - Interfaces.h 
 - Employee.h 
-- Manager.h 
 - Personal.h 
 - Engineer.h 
 - Factory.h
 - Project.h
 - Employee.cpp 
 - Personal.cpp 
-- Engineer.cpp 
-- Manager.cpp 
+- Engineer.cpp  
 - Factory.cpp
 - Project.cpp
 - main.cpp
